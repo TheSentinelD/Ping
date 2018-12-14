@@ -1,6 +1,6 @@
 ﻿---
 - name: Ping 
-  hosts: all 
+  hosts: "{{ seznam_stanic }}" 
 
   tasks:
   - name: Ping
