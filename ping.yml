@@ -5,4 +5,8 @@
   tasks:
   - name: Ping
     win_ping: 
+    register: result
+    
+  - name: ukládání do lokální složky
+     local_action: copy content="{{ result.stdout | replace('\n','')}}" dest="/srv/test"
     
