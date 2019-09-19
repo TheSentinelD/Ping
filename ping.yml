@@ -8,5 +8,5 @@
     register: result
     
   - name: ukládání do lokální složky
-    local_action: lineinfile line="{{ result }}" dest=/srv/test
+    local_action: lineinfile line="{{ result }}" dest="/srv/test"
     
