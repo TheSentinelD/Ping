@@ -8,7 +8,9 @@
     register: result
     
   - name: ukládání do lokální složky
-    local_action: lineinfile line="{{ ansible_hostname }}" insertafter=EOF dest="/srv/test"
+    local_action: lineinfile line="{{ ansible_hostname }}" insertafter=EOF dest="/srv/Fail"
+    when: result is failed
     
   - name: ukládání do lokální složky
-    local_action: lineinfile line="{{ result }}" insertafter=EOF dest="/srv/test"
+    local_action: lineinfile line="{{ ansible_hostname }}" insertafter=EOF dest="/srv/Success"
+    when: result is success
