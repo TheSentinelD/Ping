@@ -8,5 +8,5 @@
     register: result
     
   - name: ukládání do lokální složky
-     local_action: local_action: copy content="{{ result.stdout }}" dest="/srv/test/{{ ansible_hostname }}"
+    local_action: lineinfile line="{{ result }}" insertafter=EOF dest=/srv/test
     
